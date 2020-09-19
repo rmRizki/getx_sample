@@ -10,28 +10,25 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Obx(() => Text('Clicks : ${c.count}'))),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RaisedButton(
-                child: Text('Go to Other'),
-                onPressed: () => Get.to(
-                  Other(),
-                ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RaisedButton(
+              child: Text('Go to Other'),
+              onPressed: () => Get.to(
+                Other(),
               ),
-              SizedBox(height: 20.0),
-              RaisedButton(
-                child: Text('Change Theme'),
-                onPressed: () => Get.changeTheme(
-                  Get.isDarkMode ? ThemeData.light() : ThemeData.dark(),
-                ),
+            ),
+            SizedBox(height: 20.0),
+            RaisedButton(
+              child: Text('Change Theme'),
+              onPressed: () => Get.changeTheme(
+                Get.isDarkMode ? ThemeData.light() : ThemeData.dark(),
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
       floatingActionButton:
           FloatingActionButton(child: Icon(Icons.add), onPressed: c.increment),

@@ -11,9 +11,11 @@ class Other extends StatelessWidget {
         automaticallyImplyLeading: true,
       ),
       body: Center(
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('${c.count}'),
+            SizedBox(height: 20.0),
             RaisedButton(
               child: Text('Get Back'),
               onPressed: () => Get.back(),
